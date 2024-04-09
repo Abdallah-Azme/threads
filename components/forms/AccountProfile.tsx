@@ -7,6 +7,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { UserSchema } from "@/lib/validations/user";
@@ -40,6 +41,7 @@ export default function AccountProfile({
   const pathname = usePathname();
   const [files, setFiles] = useState<File[]>([]);
   const { startUpload } = useUploadThing("media");
+
   const form = useForm<z.infer<typeof UserSchema>>({
     resolver: zodResolver(UserSchema),
     defaultValues: {
@@ -150,6 +152,7 @@ export default function AccountProfile({
                   onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -168,6 +171,7 @@ export default function AccountProfile({
                   className="account-form_input no-focus"
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -186,6 +190,7 @@ export default function AccountProfile({
                   className="account-form_input no-focus"
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -205,6 +210,7 @@ export default function AccountProfile({
                   className="account-form_input no-focus"
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
