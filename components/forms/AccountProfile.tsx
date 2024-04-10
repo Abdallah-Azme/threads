@@ -74,7 +74,6 @@ export default function AccountProfile({
         // the event here is reading the file as data url and it has target and in it result
         // imagedataurl is way to display the image in the browser, the data here is represented as string, the image here been decoded
         const imageDataUrl = event.target?.result?.toString() || "";
-        console.log(imageDataUrl);
         fieldChange(imageDataUrl);
       };
 
